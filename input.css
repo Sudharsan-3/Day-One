@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.codered{
+    background-color: red;
+}
+.center{
+    text-align: center;
+}
