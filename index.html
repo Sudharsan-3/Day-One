@@ -6,35 +6,66 @@
   <title>Quiz</title>
   <link href="./output.css" rel="stylesheet">
 </head>
-<body >
+<body class="bg-blue-200">
   <div class="bg-blue-200 flex flex-col justify-center items-center h-screen gap-5">
-    <div class="flex flex-col justify-center items-center h-auto gap-5 p-10 rounded-2xl bg-white text-[20px] ">
-    <div>
-    <h1>Welcom to Awesome Quiz Application</h1>
-  </div> 
-  <div class="rounded-[5px] p-2  hover:bg-blue-500 bg-blue-200  ">
-      <button > <a href="./quiz.html" >Start Quiz</a></button> 
-    </div>
-  
-  <div>
     
-   <div class="flex flex-col items-center gap-2">
-    <h5>Instruction</h5>
-    <div class="flex items-center justify-between gap-1">
-      <h5 >Quiz Based on : </h5> 
-      <p >Web-Developement</p> 
+    <div id="welcome" class="flex flex-col justify-center items-center h-auto gap-5 p-10 rounded-2xl bg-white text-[20px]" >
+      <h1>Welcome to Awesome Quiz Application</h1>
+      <button id="btn" class="rounded-[5px] p-2 bg-blue-200 hover:bg-blue-500">Start Quiz</button> 
+
+      <div class="flex flex-col items-center gap-2">
+        <h5>Instructions</h5>
+        <div class="flex items-center justify-between gap-1">
+          <h5>Quiz Based on:</h5> 
+          <p>Web Development</p> 
+        </div>
+        <div class="flex items-center justify-between gap-3">
+          <h5>Time:</h5>
+          <p>15:00 min</p>
+        </div>
+      </div>
     </div>
-    <div class="flex items-center justify-between gap-3">
-      <h5 >Time : </h5>
-      <p >15:00 min</p>
+
+    
+    <div id="quizz" class="flex flex-col h-fit p-5 items-center bg-white rounded-2xl" style="display: none;">
+      <div class="flex justify-between p-2 gap-10 items-center w-full border-b-4 border-indigo-500">
+        <h2>Awesome Quiz</h2>
+        <div class="flex bg-blue-300 p-2 h-15 w-15 rounded-full justify-center items-center">
+          <p id="timer" class="text-amber-50 p-1">15:00</p>
+        </div>
+      </div>
+
+      <div class="border-b-4 border-indigo-500 w-full p-5">
+        <h3 id="questions">1. What does HTML stand for?</h3>
+        <div class="flex flex-col gap-3 mt-3">
+          <p id="option1" class="ans bg-blue-200 p-3 rounded hover:cursor-pointer hover:bg-green-300"></p>
+          <p id="option2" class="ans bg-blue-200 p-3 rounded hover:cursor-pointer hover:bg-green-300"></p>
+          <p id="option3" class="ans bg-blue-200 p-3 rounded hover:cursor-pointer hover:bg-green-300"></p>
+          <p id="option4" class="ans bg-blue-200 p-3 rounded hover:cursor-pointer hover:bg-green-300"></p>
+        </div>
+      </div>
+
+      <div class="flex justify-between w-full items-center p-5">
+        <h4><span id="count">1</span> of 5 questions</h4>
+        <button id="prev" class="bg-blue-400 p-2 rounded text-white hover:bg-blue-700">Prev</button>
+        <button id="next" class="bg-blue-400 p-2 rounded text-white hover:bg-blue-700">Next</button>
+      </div>
+
+      <div class="w-full">
+        <progress id="progress" class="w-full" value="0" max="100"></progress>
+      </div>
     </div>
-   </div>
-   
-  </div>
-  </div>
-  </div>
+
   
- 
-  
+    <div id="result" class="flex flex-col gap-2 bg-white p-10 rounded-xl items-center text-[20px] " style="display: none;" >
+      <h1>Quiz Completed!</h1>
+      <p id="final-score"></p>
+      <p>Highest Score: <span id="high-score"></span></p>
+      <p id="restart" class="p-2 bg-blue-200 hover:cursor-pointer hover:bg-blue-600 rounded-[5px]">Restart</p>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
 </body>
 </html>
+
