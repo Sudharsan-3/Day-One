@@ -126,7 +126,6 @@ ansElements.forEach((option, index) => {
          score++;
       }
 
-      console.log(`Question: ${questions[currentIndex].question} | Answer: ${option.textContent} | Correct: ${isCorrect}`);
 
       if (currentIndex < questions.length - 1) {
          currentIndex++;
